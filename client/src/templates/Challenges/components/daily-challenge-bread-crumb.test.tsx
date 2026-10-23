@@ -37,6 +37,9 @@ describe('<DailyChallengeBreadCrumb />', () => {
       screen.getByRole('navigation', { name: 'aria.breadcrumb-nav' })
     ).toBeInTheDocument();
     expect(screen.getByText('July 15')).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: 'July 15' })
+    ).toHaveAttribute('aria-current', 'page');
     expect(screen.queryByText('2026')).not.toBeInTheDocument();
   });
 
@@ -44,5 +47,8 @@ describe('<DailyChallengeBreadCrumb />', () => {
     render(<DailyChallengeBreadCrumb dailyChallengeParam='07-15' />);
 
     expect(screen.getByText('July 15')).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: 'July 15' })
+    ).toHaveAttribute('aria-current', 'page');
   });
 });

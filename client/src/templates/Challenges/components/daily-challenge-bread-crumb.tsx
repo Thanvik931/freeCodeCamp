@@ -29,7 +29,10 @@ function DailyChallengeBreadCrumb({
           </Link>
         </li>
         <li className='breadcrumb-right'>
-          <Link to={`/learn/daily-coding-challenge/archive`}>
+          <Link
+            aria-current='page'
+            to={`/learn/daily-coding-challenge/archive`}
+          >
             {formatDisplayDate(dailyChallengeParam)}
           </Link>
         </li>

@@ -28,6 +28,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
         </li>
         <li className='breadcrumb-right'>
           <Link
+            aria-current='page'
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}/#${block}`}
           >
